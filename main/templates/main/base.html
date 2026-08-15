@@ -1,22 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My App{% endblock %}</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Anmer Kailo{% endblock %}
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body {
+            background: #0d1117;
+            color: #f0f6fc;
+        }
+
+        .navbar {
+            background: #010409;
+        }
+
+        .card {
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    </style>
+
 </head>
-<body class="bg-dark text-light">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">My app</a>
-            </div>
-        </nav>
-        <div class="container mt-5">
-            {% block content %}
-            {% endblock %}
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="/">
+            AK.
+        </a>
+
+        <div>
+
+            <a href="#projects"
+               class="text-light text-decoration-none me-4">
+                Projects
+            </a>
+
+            <a href="https://github.com/kailo-am"
+               target="_blank"
+               class="text-light text-decoration-none">
+                GitHub
+            </a>
+
         </div>
-    
+
+    </div>
+
+</nav>
+
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer class="py-4 mt-5 border-top border-secondary">
+
+    <div class="container text-center">
+
+        <p class="text-secondary mb-0">
+            © 2026 Anmer Kailo
+        </p>
+
+    </div>
+
+</footer>
+
+
 </body>
+
 </html>

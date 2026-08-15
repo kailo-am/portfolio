@@ -1,35 +1,108 @@
-{% extends 'main/base.html' %}
+{% extends "main/base.html" %}
 
-{% block title %}
-Home
-{% endblock %}
+{% block title %}Anmer Kailo | Python Developer{% endblock %}
 
 {% block content %}
 
-<div class="text-center py-5">
+<section class="py-5 text-center">
+    <div class="container">
 
-    <h1 class="display-1 fw-bold">
-        Amal chandran
-    </h1>
+        <p class="text-primary fw-semibold mb-2">
+            PYTHON • DJANGO • FULL STACK
+        </p>
 
-    <h3 class="text-secondary">
-        Python & Django Developer
-    </h3>
+        <h1 class="display-2 fw-bold">
+            Hi, I'm Anmer Kailo.
+        </h1>
 
-    <p class="lead mt-4">
-        I build web applications and REST APIs using Django, Python, SQL and Git.
-    </p>
+        <p class="lead text-secondary mx-auto mt-3" style="max-width: 700px;">
+            I build web applications and REST APIs with Python, Django,
+            Django REST Framework, React and SQL.
+        </p>
 
-    <div class="mt-4">
-        <a href="#" class="btn btn-primary btn-lg me-2">
-            View Projects
-        </a>
+        <div class="mt-4">
+            <a href="#projects" class="btn btn-primary btn-lg me-2">
+                View My Work
+            </a>
 
-        <a href="#" class="btn btn-outline-light btn-lg">
-            Contact Me
-        </a>
+            <a href="https://github.com/kailo-am"
+               target="_blank"
+               class="btn btn-outline-light btn-lg">
+                GitHub
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="projects" class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="text-primary fw-semibold">MY WORK</p>
+            <h2 class="fw-bold">Projects</h2>
+            <p class="text-secondary">
+                Things I've built while learning and developing.
+            </p>
+        </div>
+
+
+        <div class="row g-4">
+
+            {% for project in projects %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100 bg-dark border-secondary">
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h3 class="card-title">
+                            {{ project.title }}
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            {{ project.description }}
+                        </p>
+
+                        <p class="small text-primary">
+                            {{ project.technologies }}
+                        </p>
+
+                        <div class="mt-auto">
+
+                            {% if project.github_url %}
+                            <a href="{{ project.github_url }}"
+                               target="_blank"
+                               class="btn btn-outline-light btn-sm">
+                                GitHub →
+                            </a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="text-center">
+                <p class="text-secondary">
+                    Projects coming soon.
+                </p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
     </div>
 
-</div>
+</section>
 
 {% endblock %}
