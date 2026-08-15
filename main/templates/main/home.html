@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 
-{% block title %}Anmer Kailo | Python Developer{% endblock %}
+{% block title %}Amal | Python Developer{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
         </p>
 
         <h1 class="display-2 fw-bold">
-            Hi, I'm Anmer Kailo.
+            Hi, I'm Amal.
         </h1>
 
         <p class="lead text-secondary mx-auto mt-3" style="max-width: 700px;">
@@ -54,29 +54,28 @@
             {% for project in projects %}
 
             <div class="col-md-6 col-lg-4">
+                <div class="card h-100 bg-dark border-secondary project-card">
 
-                <div class="card h-100 bg-dark border-secondary">
+                    <div class="card-body p-4 d-flex flex-column">
 
-                    <div class="card-body d-flex flex-column">
-
-                        <h3 class="card-title">
+                        <h3 class="h5 fw-bold mb-3 text-light">
                             {{ project.title }}
                         </h3>
 
-                        <p class="card-text text-secondary">
+                        <p class="card-text text-secondary mb-4">
                             {{ project.description }}
                         </p>
 
-                        <p class="small text-primary">
+                        <div class="small text-primary mb-4">
                             {{ project.technologies }}
-                        </p>
+                        </div>
 
                         <div class="mt-auto">
 
                             {% if project.github_url %}
                             <a href="{{ project.github_url }}"
-                               target="_blank"
-                               class="btn btn-outline-light btn-sm">
+                            target="_blank"
+                            class="btn btn-outline-light btn-sm">
                                 GitHub →
                             </a>
                             {% endif %}
