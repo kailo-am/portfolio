@@ -19,13 +19,34 @@
 
     <style>
 
+        :root {
+        --bg-color: #0d1117;
+        --text-color: #f0f6fc;
+        --muted-color: #8b949e;
+        --card-color: #161b22;
+        --nav-color: #010409;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #212529;
+            --muted-color: #6c757d;
+            --card-color: #f8f9fa;
+            --nav-color: #f8f9fa;
+        }
+
         body {
-            background: #0d1117;
-            color: #f0f6fc;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
         .navbar {
-            background: #010409;
+            background: var(--nav-color);
+        }
+
+        .project-card {
+            background: var(--card-color) !important;
         }
 
         .card {
@@ -43,6 +64,33 @@
             transform: translateY(-6px);
             border-color: #0d6efd !important;
         }
+        .theme-text {
+            color: var(--text-color) !important;
+        }
+
+        .theme-muted {
+            color: var(--muted-color) !important;
+        }
+
+        .theme-card {
+            background-color: var(--card-color) !important;
+            color: var(--text-color) !important;
+        }
+
+        .theme-nav {
+            background-color: var(--nav-color) !important;
+        }
+        .theme-outline {
+            color: var(--text-color) !important;
+            border: 1px solid var(--text-color) !important;
+        }
+
+        .theme-outline:hover {
+            background-color: var(--text-color) !important;
+            color: var(--bg-color) !important;
+        }
+
+        
 
     </style>
 
@@ -51,35 +99,41 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg theme-nav">
 
     <div class="container">
 
-        <a class="navbar-brand fw-bold"
+        <a class="navbar-brand fw-bold theme-text"
            href="/">
-            AK.
+            Amal.
         </a>
 
         <div>
             <a href="#about"
-                class="text-light text-decoration-none me-4">
+                class="theme-text  text-decoration-none me-4">
                     About
             </a>
             <a href="#skills"
-                class="text-light text-decoration-none me-4">
+                class="theme-text  text-decoration-none me-4">
                     Skills
             </a>
 
             <a href="#projects"
-               class="text-light text-decoration-none me-4">
+               class="theme-text  text-decoration-none me-4">
                 Projects
             </a>
 
             <a href="https://github.com/kailo-am"
                target="_blank"
-               class="text-light text-decoration-none">
+               class="theme-text  text-decoration-none">
                 GitHub
             </a>
+            <button id="themeToggle"
+                    class="btn theme-outline btn-sm"
+                    type="button"
+                    aria-label="Toggle theme">
+                    <i id="themeIcon" class="bi bi-sun-fill"></i>
+            </button>
 
         </div>
 
@@ -108,7 +162,25 @@
 
 </footer>
 
+<script>
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
 
+    themeToggle.addEventListener("click", () => {
+
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+
+        if (currentTheme === "light") {
+            document.documentElement.removeAttribute("data-theme");
+            themeIcon.className = "bi bi-sun-fill";
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            themeIcon.className = "bi bi-moon-fill";
+        }
+
+    });
+</script>
 </body>
 
 </html>

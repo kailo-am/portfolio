@@ -27,7 +27,7 @@
 
             <a href="https://github.com/kailo-am"
                target="_blank"
-               class="btn btn-outline-light btn-lg">
+               class="btn theme-outline btn-lg">
                 GitHub
             </a>
         </div>
@@ -50,14 +50,14 @@
                     Building things and learning how they work.
                 </h2>
 
-                <p class="text-secondary lead">
+                <p class="theme-muted lead">
                     I'm a Computer Engineering graduate focused on
                     Python, Django and full-stack development.
                     I enjoy building practical applications and
                     understanding what happens behind the code.
                 </p>
 
-                <p class="text-secondary">
+                <p class="theme-muted">
                     I've worked with Django REST Framework, React,
                     SQL, JWT authentication and Git while building
                     projects and strengthening my development skills.
@@ -90,13 +90,13 @@
         <div class="row g-4">
 
             <div class="col-md-6 col-lg-3">
-                <div class="card bg-dark border-secondary h-100">
+                <div class="card theme-card border-secondary h-100">
                     <div class="card-body p-4">
-                        <h3 class="h5 fw-bold text-light">
+                        <h3 class="h5 fw-bold theme-text ">
                             Backend
                         </h3>
 
-                        <p class="text-secondary mb-0">
+                        <p class="theme-muted mb-0">
                             Python, Django, Django REST Framework,
                             REST APIs, JWT
                         </p>
@@ -106,9 +106,9 @@
 
 
             <div class="col-md-6 col-lg-3">
-                <div class="card bg-dark border-secondary h-100">
+                <div class="card theme-card border-secondary h-100">
                     <div class="card-body p-4">
-                        <h3 class="h5 fw-bold text-light">
+                        <h3 class="h5 fw-bold theme-text ">
                             Frontend
                         </h3>
 
@@ -122,13 +122,13 @@
 
 
             <div class="col-md-6 col-lg-3">
-                <div class="card bg-dark border-secondary h-100">
+                <div class="card theme-card border-secondary h-100">
                     <div class="card-body p-4">
-                        <h3 class="h5 fw-bold text-light">
+                        <h3 class="h5 fw-bold theme-text ">
                             Database
                         </h3>
 
-                        <p class="text-secondary mb-0">
+                        <p class="theme-muted mb-0">
                             SQL, MySQL, SQLite,
                             Django ORM
                         </p>
@@ -138,13 +138,13 @@
 
 
             <div class="col-md-6 col-lg-3">
-                <div class="card bg-dark border-secondary h-100">
+                <div class="card theme-card border-secondary h-100">
                     <div class="card-body p-4">
-                        <h3 class="h5 fw-bold text-light">
+                        <h3 class="h5 fw-bold theme-text ">
                             Tools
                         </h3>
 
-                        <p class="text-secondary mb-0">
+                        <p class="theme-muted mb-0">
                             Git, GitHub, Linux,
                             VS Code, Postman
                         </p>
@@ -165,7 +165,7 @@
         <div class="text-center mb-5">
             <p class="text-primary fw-semibold">MY WORK</p>
             <h2 class="fw-bold">Projects</h2>
-            <p class="text-secondary">
+            <p class="theme-muted">
                 Things I've built while learning and developing.
             </p>
         </div>
@@ -176,15 +176,15 @@
             {% for project in projects %}
 
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 bg-dark border-secondary project-card">
+                <div class="card h-100 theme-card border-secondary project-card">
 
                     <div class="card-body p-4 d-flex flex-column">
 
-                        <h3 class="h5 fw-bold mb-3 text-light">
+                        <h3 class="h5 fw-bold mb-3 theme-text">
                             {{ project.title }}
                         </h3>
 
-                        <p class="card-text text-secondary mb-4">
+                        <p class="card-text theme-muted mb-4">
                             {{ project.description }}
                         </p>
 
@@ -197,7 +197,7 @@
                             {% if project.github_url %}
                             <a href="{{ project.github_url }}"
                             target="_blank"
-                            class="btn btn-outline-light btn-sm">
+                            class="btn theme-outline btn-sm">
                                 GitHub →
                             </a>
                             {% endif %}
@@ -213,7 +213,7 @@
             {% empty %}
 
             <div class="text-center">
-                <p class="text-secondary">
+                <p class="theme-muted">
                     Projects coming soon.
                 </p>
             </div>
@@ -239,7 +239,7 @@
                 Let's build something.
             </h2>
 
-            <p class="text-secondary mx-auto mb-4"
+            <p class="theme-muted mx-auto mb-4"
                style="max-width: 600px;">
                 I'm open to software development opportunities,
                 interesting projects and conversations about technology.
@@ -259,7 +259,7 @@
                 <a href="https://github.com/kailo-am"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="btn btn-outline-light"
+                   class="btn theme-outline"
                    aria-label="GitHub">
                     <i class="bi bi-github"></i>
                     GitHub
@@ -269,7 +269,7 @@
                 <a href="https://www.linkedin.com/in/amal-dovan"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="btn btn-outline-light"
+                   class="btn theme-outline"
                    aria-label="LinkedIn">
                     <i class="bi bi-linkedin"></i>
                     LinkedIn
@@ -279,7 +279,7 @@
                 <a href="https://www.instagram.com/do_no_van_k/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="btn btn-outline-light"
+                   class="btn theme-outline"
                    aria-label="Instagram">
                     <i class="bi bi-instagram"></i>
                     Instagram
