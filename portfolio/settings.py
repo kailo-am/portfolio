@@ -25,14 +25,28 @@ load_dotenv()
 SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True") == "True"
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+ALLOWED_HOSTS = os.environ.get(
+    "ALLOWED_HOSTS",
+    "127.0.0.1,localhost"
+).split(",")
+
+if os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
+    ALLOWED_HOSTS.append(os.environ["RENDER_EXTERNAL_HOSTNAME"])
+
 CSRF_TRUSTED_ORIGINS = [
-    origin for origin in os.environ.get(
+    origin
+    for origin in os.environ.get(
         "CSRF_TRUSTED_ORIGINS",
         ""
     ).split(",")
     if origin
 ]
+
+if os.environ.get("RENDER_EXTERNAL_URL"):
+    CSRF_TRUSTED_ORIGINS.append(
+        os.environ["RENDER_EXTERNAL_URL"]
+    )
 
 # Application definition
 
