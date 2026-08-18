@@ -173,55 +173,89 @@
 
         <div class="row g-4">
 
-            {% for project in projects %}
+            <div class="row g-4">
 
-            <div class="col-md-6 col-lg-4">
+         <!-- Event Registration Platform -->
 
-                <article class="project-card h-100">
+                <div class="col-md-6">
 
-                    <div class="p-4 d-flex flex-column h-100">
+                    <article class="project-card h-100">
 
-                        <h3 class="project-title mb-3">
-                            {{ project.title }}
-                        </h3>
+                        <div class="p-4 d-flex flex-column h-100">
 
-                        <p class="project-description mb-4">
-                            {{ project.description }}
-                        </p>
+                            <h3 class="project-title mb-3">
+                                Event Registration Platform
+                            </h3>
 
-                        <div class="project-tech mb-4">
-                            {{ project.technologies }}
+                            <p class="project-description mb-4">
+                                Full-stack event registration platform built with
+                                Django REST Framework, React, JWT authentication,
+                                and SQLite.
+                            </p>
+
+                            <div class="project-tech mb-4">
+                                Django REST Framework · React · JWT · SQLite
+                            </div>
+
+                            <div class="mt-auto">
+
+                                <a href="https://github.com/kailo-am/event-registration-platform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm">
+                                    <i class="bi bi-github me-1"></i>
+                                    View on GitHub
+                                </a>
+
+                            </div>
+
                         </div>
 
-                        <div class="mt-auto">
+                    </article>
 
-                            {% if project.github_url %}
-                            <a href="{{ project.github_url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-primary btn-sm">
-                                <i class="bi bi-github me-1"></i>
-                                View on GitHub
-                            </a>
-                            {% endif %}
+                </div>
+
+
+                <!-- Student Management API -->
+                <div class="col-md-6">
+
+                    <article class="project-card h-100">
+
+                        <div class="p-4 d-flex flex-column h-100">
+
+                            <h3 class="project-title mb-3">
+                                Student Management API
+                            </h3>
+
+                            <p class="project-description mb-4">
+                                REST API for student record management built with
+                                Django Tastypie, SQLite, and Django ORM.
+                            </p>
+
+                            <div class="project-tech mb-4">
+                                Python · Django · Tastypie · SQLite
+                            </div>
+
+                            <div class="mt-auto">
+
+                                <a href="https://github.com/kailo-am/student-management-api"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm">
+                                    <i class="bi bi-github me-1"></i>
+                                    View on GitHub
+                                </a>
+
+                            </div>
 
                         </div>
 
-                    </div>
+                    </article>
 
-                </article>
+                </div>
 
             </div>
 
-            {% empty %}
-
-            <div class="text-center">
-                <p class="theme-muted">
-                    Projects coming soon.
-                </p>
-            </div>
-
-            {% endfor %}
 
         </div>
 
